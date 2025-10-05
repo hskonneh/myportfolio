@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hassan Sidique Konneh - Portfolio</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha512-Fo3rlrZj/k7ujTnHg4CGR2D7kSs0V4LLanw2qksYuRlEzO+tcaEPQogQ0KaoGN26/zrn20ImR1DfuLWnOo7aBA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header class="bg-white dark:bg-gray-800 shadow-md fixed w-full z-50">
+        <nav class="container mx-auto px-4 py-4 flex justify-between items-center">
+            <a href="#hero" class="text-2xl font-bold text-gray-900 dark:text-white">Hassan Konneh</a>
+            <div class="flex items-center space-x-4">
+                <button id="theme-toggle" class="hidden md:block text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition duration-300 focus:outline-none">
+                    <i class="fas fa-moon text-xl"></i>
+                </button>
+                <div class="hidden md:flex space-x-6">
+                    <a href="#hero" class="text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition duration-300">Home</a>
+                    <a href="#about" class="text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition duration-300">About</a>
+                    <a href="#skills" class="text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition duration-300">Skills</a>
+                    <a href="#experience" class="text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition duration-300">Experience</a>
+                    <a href="#projects" class="text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition duration-300">Projects</a>
+                    <a href="#blog-insights" class="text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition duration-300">Blog & Insights</a>
+                    <a href="#testimonials" class="text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition duration-300">Testimonials</a>
+                    <a href="#contact" class="text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition duration-300">Contact</a>
+                    <a href="#services" class="text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition duration-300">Services</a>
+                </div>
+                <div class="md:hidden flex items-center space-x-4">
+                    <button id="theme-toggle-mobile" class="text-gray-900 dark:text-white focus:outline-none">
+                        <i class="fas fa-moon text-xl"></i>
+                    </button>
+                    <!-- Mobile menu button -->
+                    <button class="text-gray-900 dark:text-white focus:outline-none">
+                        <i class="fas fa-bars text-xl"></i>
+                    </button>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section id="hero" class="relative h-screen flex items-center justify-center text-center bg-gray-50 dark:bg-gray-900 py-16 px-4">
+            <div class="max-w-4xl mx-auto z-10">
+                <img src="assets/Professional_photo.png" alt="Hassan Sidique Konneh Profile Picture" class="w-48 h-48 rounded-full mx-auto mb-6 shadow-lg object-cover">
+                <h1 id="hero-name" class="text-5xl md:text-7xl font-extrabold text-gray-900 dark:text-white leading-tight mb-4"></h1>
+                <p id="hero-title" class="text-2xl md:text-3xl text-blue-600 dark:text-blue-400 font-semibold mb-6"></p>
+                <p class="text-lg md:text-xl text-gray-700 dark:text-gray-300 mb-8">"Empowering data-driven decisions for a sustainable future."</p>
+                <p class="text-md md:text-lg text-gray-600 dark:text-gray-400 mb-10">My mission is to leverage economic insights and advanced data analytics to drive impactful solutions in development and policy-making.</p>
+                <div class="flex flex-col sm:flex-row justify-center gap-4">
+                    <a href="#projects" class="px-8 py-3 bg-blue-600 text-white text-lg font-semibold rounded-full shadow-lg hover:bg-blue-700 transition duration-300 ease-in-out transform hover:scale-105 focus:outline-none focus:ring-4 focus:ring-blue-500 focus:ring-opacity-50">View My Work</a>
+                    <a href="https://www.dropbox.com/scl/fi/ii7sz5st2jumh4xjghk7t/HASSAN-SIDIQUE-KONNEH_CV__2025.pdf?rlkey=njivpddt2rb0dpp47wjwhw84i&st=vw968sml&dl=0" target="_blank" class="px-8 py-3 bg-gray-800 text-white text-lg font-semibold rounded-full shadow-lg hover:bg-gray-700 transition duration-300 ease-in-out transform hover:scale-105 focus:outline-none focus:ring-4 focus:ring-gray-500 focus:ring-opacity-50">Download CV <i class="fas fa-download ml-2"></i></a>
+                </div>
+            </div>
+        </section>
+
+        <section id="about" class="py-16 px-4 bg-white dark:bg-gray-800">
+            <div class="max-w-4xl mx-auto">
+                <h2 class="text-4xl font-bold text-gray-900 dark:text-white mb-8 text-center">About Me</h2>
+                
+                <div class="mb-10">
+                    <h3 class="text-2xl font-semibold text-blue-600 dark:text-blue-400 mb-4">A Personal Story</h3>
+                    <p class="text-gray-700 dark:text-gray-300 leading-relaxed">
+                        My journey into the world of data and economics began with a profound curiosity about how societies function and how data can illuminate pathways to progress. Growing up, I was fascinated by the stories numbers could tell, and this led me to pursue a rigorous education in economics and statistics. Over the years, I've had the privilege of working on diverse projects, from analyzing market trends to evaluating the impact of development programs. Each experience has deepened my commitment to using data as a tool for positive change.
+                    </p>
+                </div>
+
+                <div class="mb-10">
+                    <h3 class="text-2xl font-semibold text-blue-600 dark:text-blue-400 mb-4">Values and Motivations</h3>
+                    <p class="text-gray-700 dark:text-gray-300 leading-relaxed">
+                        Integrity, innovation, and impact are the cornerstones of my professional ethos. I believe in transparent and ethical data practices, constantly seeking innovative approaches to complex problems, and ensuring that my work contributes meaningfully to societal well-being. My motivation stems from the desire to empower organizations and communities with actionable insights, fostering sustainable growth and equitable development.
+                    </p>
+                </div>
+
+                <div>
+                    <h3 class="text-2xl font-semibold text-blue-600 dark:text-blue-400 mb-4">My Journey</h3>
+                    <p class="text-gray-700 dark:text-gray-300 leading-relaxed">
+                        From academic pursuits to hands-on field experience, my career has been a continuous learning curve. I've honed my skills in statistical analysis, econometric modeling, and data visualization, working with various tools and technologies. My journey has taken me through different sectors, including international development, public policy, and private consulting, allowing me to gain a holistic perspective on global challenges and opportunities. I am always eager to embrace new challenges and collaborate on projects that push the boundaries of what's possible with data.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <section id="skills" class="py-16 px-4 bg-gray-50 dark:bg-gray-900">
+            <div class="max-w-4xl mx-auto">
+                <h2 class="text-4xl font-bold text-gray-900 dark:text-white mb-8 text-center">Skills & Tools</h2>
+                <ul class="list-disc list-inside text-gray-700 dark:text-gray-300 space-y-4 text-lg">
+                    <li><i class="fas fa-laptop-code text-blue-600 mr-2"></i><span class="font-semibold">Development & Operations:</span> Git, CLI Workflows, Cloud Platforms (AWS, Azure, GCP basics), Prompt development</li>
+                    <li><i class="fas fa-chart-bar text-blue-600 mr-2"></i><span class="font-semibold">Data Science & Analytics:</span> Python, R, Stata, SQL</li>
+                    <li><i class="fas fa-database text-blue-600 mr-2"></i><span class="font-semibold">Data Management & Tools:</span> Open Data Kit (ODK), Microsoft Suite, Google Suite</li>
+                </ul>
+            </div>
+        </section>
+
+        <section id="experience" class="py-16 px-4 bg-white dark:bg-gray-800">
+            <div class="max-w-4xl mx-auto">
+                <h2 class="text-4xl font-bold text-gray-900 dark:text-white mb-8 text-center">Experience</h2>
+                <div id="experience-container" class="space-y-8"></div>
+            </div>
+        </section>
+
+        <section id="projects" class="py-16 px-4 bg-gray-50 dark:bg-gray-900">
+            <div class="max-w-4xl mx-auto">
+                <h2 class="text-4xl font-bold text-gray-900 dark:text-white mb-8 text-center">Projects</h2>
+                <div id="projects-container" class="grid md:grid-cols-2 lg:grid-cols-3 gap-8"></div>
+            </div>
+        </section>
+
+        <section id="blog-insights" class="py-16 px-4 bg-white dark:bg-gray-800">
+            <div class="max-w-4xl mx-auto">
+                <h2 class="text-4xl font-bold text-gray-900 dark:text-white mb-8 text-center">Blog & Insights</h2>
+                <div class="space-y-8 text-gray-700 dark:text-gray-300">
+                    <p class="text-lg leading-relaxed">
+                        Welcome to my blog, where I share my thoughts, tutorials, and reflections on data science, economics, and technology. Here, you'll find deep dives into analytical techniques, discussions on current economic trends, and personal insights from my professional journey. My goal is to foster a space for learning and discussion, offering valuable content for fellow enthusiasts and professionals alike.
+                    </p>
+                    <p class="text-lg leading-relaxed">
+                        Stay tuned for articles on topics such as advanced econometric modeling, practical applications of machine learning in development, effective data visualization strategies, and navigating the complexities of cloud platforms for data solutions. I also plan to share tutorials on Python and R, demonstrating how to tackle real-world data challenges with code.
+                    </p>
+                    <p class="text-lg leading-relaxed">
+                        Feel free to explore, comment, and engage with the content. Your feedback and questions are always welcome as we collectively explore the fascinating world of data and its impact.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <section id="testimonials" class="py-16 px-4 bg-gray-50 dark:bg-gray-900">
+            <div class="max-w-4xl mx-auto">
+                <h2 class="text-4xl font-bold text-gray-900 dark:text-white mb-8 text-center">Testimonials</h2>
+                <div class="grid md:grid-cols-3 gap-8">
+                    <div class="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-lg">
+                        <p class="text-gray-700 dark:text-gray-300 italic mb-4">"Hassan's mentorship was instrumental in helping me secure a scholarship for my Master's degree. His guidance on data analysis and career planning was invaluable."</p>
+                        <p class="font-semibold text-gray-900 dark:text-white">- Jane Doe, Graduate Student</p>
+                    </div>
+                    <div class="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-lg">
+                        <p class="text-gray-700 dark:text-gray-300 italic mb-4">"Working with Hassan on our project was a game-changer. His expertise in economic modeling provided insights that significantly improved our policy recommendations."</p>
+                        <p class="font-semibold text-gray-900 dark:text-white">- John Smith, Research Lead</p>
+                    </div>
+                    <div class="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-lg">
+                        <p class="text-gray-700 dark:text-gray-300 italic mb-4">"Hassan's workshops on data visualization transformed how our team presents information. His clear and practical approach made complex topics easy to understand."</p>
+                        <p class="font-semibold text-gray-900 dark:text-white">- Emily White, Program Manager</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="py-16 px-4 bg-white dark:bg-gray-800 text-center">
+            <div class="max-w-4xl mx-auto">
+                <h2 class="text-4xl font-bold text-gray-900 dark:text-white mb-8">Contact</h2>
+                <div class="contact-info space-y-4 text-lg text-gray-700 dark:text-gray-300">
+                    <p>Email: <a id="contact-email" href="" class="text-blue-600 hover:underline"></a></p>
+                    <p>LinkedIn: <a id="contact-linkedin" href="" target="_blank" class="text-blue-600 hover:underline"></a></p>
+                    <p>GitHub: <a id="contact-github" href="https://github.com/hskonneh" target="_blank" class="text-blue-600 hover:underline">hskonneh</a></p>
+                    <p>Mobile: <span id="contact-mobile"></span></p>
+                </div>
+            </div>
+        </section>
+
+        <section id="services" class="py-16 px-4 bg-gray-50 dark:bg-gray-900 text-center">
+            <div class="max-w-4xl mx-auto">
+                <h2 class="text-4xl font-bold text-gray-900 dark:text-white mb-8">Services Offered</h2>
+                <div class="services-list grid md:grid-cols-2 lg:grid-cols-3 gap-6 text-gray-700 dark:text-gray-300">
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="bg-gray-900 dark:bg-gray-950 text-white py-8 text-center">
+        <div class="max-w-4xl mx-auto px-4">
+            <p class="text-gray-400 text-sm mb-4">&copy; <span id="current-year"></span> Hassan Sidique Konneh. All rights reserved.</p>
+            <div class="social-links flex justify-center space-x-6">
+                <a id="footer-linkedin" href="#" target="_blank" class="text-gray-400 hover:text-blue-400 transition duration-300"><i class="fab fa-linkedin-in text-xl"></i></a>
+                <a id="footer-github" href="https://github.com/hskonneh" target="_blank" class="text-gray-400 hover:text-blue-400 transition duration-300"><i class="fab fa-github text-xl"></i></a>
+                <a id="footer-twitter" href="#" target="_blank" class="text-gray-400 hover:text-blue-400 transition duration-300"><i class="fab fa-twitter text-xl"></i></a>
+                <a id="footer-facebook" href="#" target="_blank" class="text-gray-400 hover:text-blue-400 transition duration-300"><i class="fab fa-facebook text-xl"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

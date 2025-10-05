@@ -1,0 +1,99 @@
+/* Custom styles for the portfolio website */
+
+/* General Body Styles */
+body {
+    font-family: 'Inter', sans-serif;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Dark Mode Styles */
+body.dark-mode {
+    background-color: #1a202c; /* Dark background */
+    color: #e2e8f0; /* Light text */
+}
+
+body.dark-mode .bg-white {
+    background-color: #2d3748; /* Darker background for cards/sections */
+}
+
+body.dark-mode .text-gray-900 {
+    color: #e2e8f0;
+}
+
+body.dark-mode .text-gray-700 {
+    color: #cbd5e0;
+}
+
+body.dark-mode .text-gray-600 {
+    color: #a0aec0;
+}
+
+body.dark-mode .shadow-md {
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.2), 0 2px 4px -1px rgba(0, 0, 0, 0.12);
+}
+
+/* Hero Section Specifics */
+#hero {
+    background-size: cover;
+    background-position: center;
+    color: white;
+}
+
+/* Navigation Link Styling */
+nav a {
+    text-decoration: none; /* Remove underline */
+    padding: 8px 12px;
+    border-radius: 9999px; /* Pill shape */
+    transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease;
+}
+
+nav a:hover {
+    background-color: rgba(59, 130, 246, 0.2); /* Light blue background on hover */
+    transform: translateY(-2px); /* Slight lift effect */
+}
+
+/* Theme Toggle Button */
+#theme-toggle {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 1.25rem; /* text-xl */
+    color: #4a5568; /* gray-700 */
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+#theme-toggle:hover {
+    color: #2b6cb0; /* blue-600 */
+    transform: scale(1.1);
+}
+
+body.dark-mode #theme-toggle {
+    color: #cbd5e0; /* gray-300 */
+}
+
+body.dark-mode #theme-toggle:hover {
+    color: #63b3ed; /* blue-400 */
+}
+
+/* Project and Service Card Styling */
+.project-card, .service-card {
+    background-color: #ffffff;
+    border-radius: 0.5rem; /* rounded-lg */
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    padding: 1.5rem; /* p-6 */
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.project-card:hover, .service-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+}
+
+body.dark-mode .project-card, body.dark-mode .service-card {
+    background-color: #2d3748; /* Darker background for cards */
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.2), 0 2px 4px -1px rgba(0, 0, 0, 0.12);
+}
+
+body.dark-mode .project-card:hover, body.dark-mode .service-card:hover {
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.3), 0 4px 6px -2px rgba(0, 0, 0, 0.15);
+}
