@@ -187,6 +187,16 @@ The final application **MUST** be configured for successful deployment to **GitH
     - After pushing, navigate to your repository on GitHub, go to "Settings" -> "Pages".
     - Under "Build and deployment", select "Deploy from a branch" and choose the `main` branch (or `gh-pages` if you prefer to use that branch for deployment) and the `/ (root)` folder.
     - Save the changes. GitHub Pages will then build and deploy your site.
+    **Deployment Package:**
+    - You **SHALL** install the `gh-pages` package to simplify the deployment process.
+    - **Command:** `npm install gh-pages --save-dev`
+
+3.  **Deployment Scripts:**
+    - You **SHALL** add two scripts to the `scripts` section of `package.json`:
+        - `"predeploy": "npm run build"`
+        - `"deploy": "gh-pages -d out"`
+    **Build and Deploy:**
+    - The final step of the project will be to run `npm run deploy`. This command will first build and export the application and then push the contents of the `out` directory to a `gh-pages` branch on the remote repository, making it live.
 
 3.  **Final Check:**
     - Before concluding, you **SHALL** perform a final check of the live URL (usually `https://<your-github-username>.github.io/<repository-name>/`) to ensure all links are working, all content is displayed correctly, and the site is responsive.
