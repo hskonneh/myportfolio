@@ -217,16 +217,16 @@ document.addEventListener('DOMContentLoaded', () => {
     const portfolioData = {
         personalInfo: {
             name: "Hassan Sidique Konneh",
-            title: "Data Analyst & Economist",
-            email: "hassan.konneh@example.com", // Replace with actual email
-            linkedin: "https://www.linkedin.com/in/hassansidiquekonneh", // Replace with actual LinkedIn
-            mobile: "+1234567890" // Replace with actual mobile
+            title: "Economist, Researcher, Data Specialist, Developer, and AI Enthusiast",
+            email: "hssnknnh@gmail.com", // Replace with actual email
+            linkedin: "https://www.linkedin.com/in/hskonneh", // Replace with actual LinkedIn
+            mobile: "+232 (0) 76 458 340" // Replace with actual mobile
         },
         experience: [
             {
-                title: "Senior Data Analyst",
-                company: "Global Insights Inc.",
-                dates: "Jan 2022 - Present",
+                title: "Development Advisor (Jr.)",
+                company: "Deutsche Gesellschaft für Internationale Zusammenarbeit (GIZ) GmbH",
+                dates: "2025 - Present",
                 duties: [
                     "Led data analysis projects, improving decision-making by 20%.",
                     "Developed predictive models for market trends.",
@@ -234,9 +234,19 @@ document.addEventListener('DOMContentLoaded', () => {
                 ]
             },
             {
-                title: "Economic Researcher",
-                company: "Development Solutions NGO",
-                dates: "Jul 2019 - Dec 2021",
+                title: "Data Management Specialist",
+                company: "Deutsche Gesellschaft für Internationale Zusammenarbeit (GIZ) GmbH",
+                dates: "2023 - 2024",
+                duties: [
+                    "Conducted econometric studies on development programs.",
+                    "Published research findings in peer-reviewed journals.",
+                    "Collaborated with international teams on policy recommendations."
+                ]
+            },
+            {
+                title: "Data Analyst",
+                company: "Deutsche Gesellschaft für Internationale Zusammenarbeit (GIZ) GmbH",
+                dates: "2022 - 2023",
                 duties: [
                     "Conducted econometric studies on development programs.",
                     "Published research findings in peer-reviewed journals.",
@@ -254,13 +264,13 @@ document.addEventListener('DOMContentLoaded', () => {
             {
                 name: "SurveyVault",
                 description: "A repository created to help data acquizition specalists using Open Data Kits - Kobo, XLS FORM.😎📊📈",
-                language: "N/A",
+                language: "XLSForm Logic",
                 url: "https://github.com/hskonneh/SurveyVault"
             },
             {
                 name: "Econometric Analysis with Stata",
                 description: "Econometric analysis project using Stata.",
-                language: "Stata",
+                language: "STATA",
                 url: "https://github.com/hskonneh/econometric_analysis_stata"
             },
             {
@@ -270,7 +280,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 url: "https://github.com/hskonneh/python"
             },
             {
-                name: "Student Online Registeration System",
+                name: "Student Online Registration System",
                 description: "This repository was created to help learners of bootstrap, Php, Mysql, html and CSS create an online registration form that will store the inserted data into a mysql database and display it on the browser if needed.",
                 language: "CSS",
                 url: "https://github.com/hskonneh/Student_online_registeration_system"
@@ -343,15 +353,18 @@ document.addEventListener('DOMContentLoaded', () => {
         servicesList.innerHTML = '';
 
         const servicesData = [
-            "Data Analysis & Visualization",
+            "Research",
+            "Data Analytics",
+            "Statistical Modeling & Econometrics",
             "Data Management & Database Design",
-            "Private Sector Development Advisory",
             "Geographic Information Systems (GIS)",
             "Full Stack Web & Mobile Development",
             "AI Integration & Development",
-            "Project Management & M&E Consulting",
+            "Systemic Advisory",
+            "Project Management & Monitoring and Evaluation",
             "Digital Skills Training",
-            "Prompt development"
+            "AI Prompt Development",
+            "AI Context Development"
         ];
 
         servicesData.forEach(service => {
