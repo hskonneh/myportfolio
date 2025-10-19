@@ -4,6 +4,7 @@
 body {
     font-family: 'Inter', sans-serif;
     transition: background-color 0.3s ease, color 0.3s ease;
+    overflow-x: hidden; /* Prevent horizontal scroll */
 }
 
 /* Dark Mode Styles */
@@ -32,6 +33,40 @@ body.dark-mode .shadow-md {
     box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.2), 0 2px 4px -1px rgba(0, 0, 0, 0.12);
 }
 
+/* Sidebar Navigation Styles */
+#sidebar {
+    transition: transform 0.3s ease-in-out;
+}
+
+#sidebar.sidebar-open {
+    transform: translateX(0);
+}
+
+/* Navigation Link Styling - Remove underlines */
+.nav-link {
+    text-decoration: none !important;
+    transition: all 0.3s ease;
+}
+
+.nav-link:hover {
+    background-color: rgba(59, 130, 246, 0.1);
+    transform: translateX(4px);
+}
+
+.nav-link.active {
+    background-color: rgba(59, 130, 246, 0.2);
+    color: #3B82F6;
+}
+
+/* Theme Toggle Button */
+#theme-toggle, #theme-toggle-mobile {
+    transition: all 0.3s ease;
+}
+
+#theme-toggle:hover, #theme-toggle-mobile:hover {
+    transform: scale(1.05);
+}
+
 /* Hero Section Specifics */
 #hero {
     background-size: cover;
@@ -39,40 +74,77 @@ body.dark-mode .shadow-md {
     color: white;
 }
 
-/* Navigation Link Styling */
-nav a {
-    text-decoration: none; /* Remove underline */
-    padding: 8px 12px;
-    border-radius: 9999px; /* Pill shape */
-    transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease;
+/* Profile Picture Blinking Animation */
+@keyframes ping {
+    0% {
+        transform: scale(1);
+        opacity: 1;
+    }
+    75%, 100% {
+        transform: scale(1.1);
+        opacity: 0;
+    }
 }
 
-nav a:hover {
-    background-color: rgba(59, 130, 246, 0.2); /* Light blue background on hover */
-    transform: translateY(-2px); /* Slight lift effect */
+.animate-ping {
+    animation: ping 2s cubic-bezier(0, 0, 0.2, 1) infinite;
 }
 
-/* Theme Toggle Button */
-#theme-toggle {
-    background: none;
-    border: none;
-    cursor: pointer;
-    font-size: 1.25rem; /* text-xl */
-    color: #4a5568; /* gray-700 */
-    transition: color 0.3s ease, transform 0.3s ease;
+/* Responsive Design Enhancements */
+@media (max-width: 1023px) {
+    /* Mobile and tablet styles */
+    main {
+        margin-left: 0 !important;
+    }
+    
+    #sidebar {
+        transform: translateX(-100%);
+    }
+    
+    #sidebar.sidebar-open {
+        transform: translateX(0);
+    }
 }
 
-#theme-toggle:hover {
-    color: #2b6cb0; /* blue-600 */
-    transform: scale(1.1);
+@media (min-width: 1024px) {
+    /* Desktop styles */
+    main {
+        margin-left: 16rem; /* 256px for sidebar width */
+    }
 }
 
-body.dark-mode #theme-toggle {
-    color: #cbd5e0; /* gray-300 */
+/* Extra small screens */
+@media (max-width: 320px) {
+    .w-64 {
+        width: 14rem; /* Reduce sidebar width on very small screens */
+    }
+    
+    main {
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
 }
 
-body.dark-mode #theme-toggle:hover {
-    color: #63b3ed; /* blue-400 */
+/* Large screens */
+@media (min-width: 1920px) {
+    .max-w-4xl {
+        max-width: 80rem; /* Increase max width for very large screens */
+    }
+    
+    .max-w-6xl {
+        max-width: 96rem;
+    }
+}
+
+/* Ultra-wide screens */
+@media (min-width: 2560px) {
+    .max-w-4xl {
+        max-width: 96rem;
+    }
+    
+    .max-w-6xl {
+        max-width: 120rem;
+    }
 }
 
 /* Project and Service Card Styling */
@@ -96,4 +168,48 @@ body.dark-mode .project-card, body.dark-mode .service-card {
 
 body.dark-mode .project-card:hover, body.dark-mode .service-card:hover {
     box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.3), 0 4px 6px -2px rgba(0, 0, 0, 0.15);
+}
+
+/* Contact Form Styling */
+#contact-form input,
+#contact-form textarea {
+    transition: all 0.3s ease;
+}
+
+#contact-form input:focus,
+#contact-form textarea:focus {
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(59, 130, 246, 0.15);
+}
+
+/* Smooth scrolling for all browsers */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Focus styles for accessibility */
+button:focus,
+input:focus,
+textarea:focus,
+a:focus {
+    outline: 2px solid #3B82F6;
+    outline-offset: 2px;
+}
+
+/* Print styles */
+@media print {
+    #sidebar,
+    header,
+    footer {
+        display: none !important;
+    }
+    
+    main {
+        margin-left: 0 !important;
+    }
+    
+    body {
+        background: white !important;
+        color: black !important;
+    }
 }

@@ -1,7 +1,7 @@
 ---
 description: Core rules, conventions, and architectural guidelines for the Portfolio App that will be hosted on GitHub Pages.
 globs:
-alwaysApply: true
+alwaysApply: false
 ---
 
 # --- GEMINI AGENT RULESET: PERSONAL PORTFOLIO WEBSITE ---

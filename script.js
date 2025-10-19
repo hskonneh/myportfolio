@@ -3,6 +3,9 @@
 document.addEventListener('DOMContentLoaded', () => {
     const themeToggle = document.getElementById('theme-toggle');
     const themeToggleMobile = document.getElementById('theme-toggle-mobile');
+    const hamburgerToggle = document.getElementById('hamburger-toggle');
+    const sidebar = document.getElementById('sidebar');
+    const sidebarOverlay = document.getElementById('sidebar-overlay');
     const body = document.body;
     const heroName = document.getElementById('hero-name');
     const heroTitle = document.getElementById('hero-title');
@@ -12,6 +15,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const currentYear = document.getElementById('current-year');
     const footerLinkedin = document.getElementById('footer-linkedin');
     const footerGithub = document.getElementById('footer-github');
+    const contactForm = document.getElementById('contact-form');
 
     // Set current year in footer
     currentYear.textContent = new Date().getFullYear();
@@ -20,12 +24,18 @@ document.addEventListener('DOMContentLoaded', () => {
     const applyTheme = (isDarkMode) => {
         if (isDarkMode) {
             body.classList.add('dark-mode');
-            if (themeToggle) themeToggle.innerHTML = '<i class="fas fa-sun"></i>'; // Sun icon for dark mode
-            if (themeToggleMobile) themeToggleMobile.innerHTML = '<i class="fas fa-sun"></i>'; // Sun icon for dark mode
+            if (themeToggle) {
+                const button = themeToggle.querySelector('span');
+                button.textContent = 'Light Mode';
+                themeToggle.innerHTML = '<i class="fas fa-sun text-lg"></i><span>Light Mode</span>';
+            }
+            if (themeToggleMobile) themeToggleMobile.innerHTML = '<i class="fas fa-sun text-xl"></i>';
         } else {
             body.classList.remove('dark-mode');
-            if (themeToggle) themeToggle.innerHTML = '<i class="fas fa-moon"></i>'; // Moon icon for light mode
-            if (themeToggleMobile) themeToggleMobile.innerHTML = '<i class="fas fa-moon"></i>'; // Moon icon for light mode
+            if (themeToggle) {
+                themeToggle.innerHTML = '<i class="fas fa-moon text-lg"></i><span>Dark Mode</span>';
+            }
+            if (themeToggleMobile) themeToggleMobile.innerHTML = '<i class="fas fa-moon text-xl"></i>';
         }
     };
 
@@ -57,16 +67,151 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
+    // Hamburger menu functionality
+    if (hamburgerToggle && sidebar && sidebarOverlay) {
+        hamburgerToggle.addEventListener('click', () => {
+            sidebar.classList.toggle('sidebar-open');
+            sidebarOverlay.classList.toggle('hidden');
+            body.style.overflow = sidebar.classList.contains('sidebar-open') ? 'hidden' : 'auto';
+        });
+
+        // Close sidebar when clicking overlay
+        sidebarOverlay.addEventListener('click', () => {
+            sidebar.classList.remove('sidebar-open');
+            sidebarOverlay.classList.add('hidden');
+            body.style.overflow = 'auto';
+        });
+
+        // Close sidebar when clicking outside on mobile
+        document.addEventListener('click', (e) => {
+            if (window.innerWidth < 1024 && 
+                !sidebar.contains(e.target) && 
+                !hamburgerToggle.contains(e.target) &&
+                sidebar.classList.contains('sidebar-open')) {
+                sidebar.classList.remove('sidebar-open');
+                sidebarOverlay.classList.add('hidden');
+                body.style.overflow = 'auto';
+            }
+        });
+
+        // Close sidebar on window resize to desktop
+        window.addEventListener('resize', () => {
+            if (window.innerWidth >= 1024) {
+                sidebar.classList.remove('sidebar-open');
+                sidebarOverlay.classList.add('hidden');
+                body.style.overflow = 'auto';
+            }
+        });
+    }
+
     // Smooth scrolling for navigation links
-    document.querySelectorAll('nav a[href^="#"]').forEach(anchor => {
+    document.querySelectorAll('.nav-link[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function (e) {
             e.preventDefault();
+            const target = document.querySelector(this.getAttribute('href'));
+            
+            if (target) {
+                target.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
+                });
 
-            document.querySelector(this.getAttribute('href')).scrollIntoView({
-                behavior: 'smooth'
-            });
+                // Close mobile sidebar after navigation
+                if (window.innerWidth < 1024) {
+                    sidebar.classList.remove('sidebar-open');
+                    sidebarOverlay.classList.add('hidden');
+                    body.style.overflow = 'auto';
+                }
+
+                // Update active navigation link
+                updateActiveNavLink(this.getAttribute('href'));
+            }
         });
     });
+
+    // Function to update active navigation link
+    function updateActiveNavLink(href) {
+        document.querySelectorAll('.nav-link').forEach(link => {
+            link.classList.remove('active');
+        });
+        document.querySelector(`.nav-link[href="${href}"]`)?.classList.add('active');
+    }
+
+    // Contact form handling
+    if (contactForm) {
+        contactForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            
+            const formData = new FormData(contactForm);
+            const name = formData.get('name');
+            const email = formData.get('email');
+            const message = formData.get('message');
+
+            // Basic validation
+            if (!name || !email || !message) {
+                alert('Please fill in all fields.');
+                return;
+            }
+
+            // Email validation
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!emailRegex.test(email)) {
+                alert('Please enter a valid email address.');
+                return;
+            }
+
+            // Create mailto link
+            const subject = `Contact from ${name}`;
+            const body = `Name: ${name}\nEmail: ${email}\n\nMessage:\n${message}`;
+            const mailtoLink = `mailto:hassan.konneh@example.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+            
+            // Open email client
+            window.location.href = mailtoLink;
+            
+            // Show success message
+            const submitButton = contactForm.querySelector('button[type="submit"]');
+            const originalText = submitButton.innerHTML;
+            submitButton.innerHTML = '<i class="fas fa-check mr-2"></i>Message Sent!';
+            submitButton.classList.add('bg-green-600', 'hover:bg-green-700');
+            
+            // Reset form
+            contactForm.reset();
+            
+            // Reset button after 3 seconds
+            setTimeout(() => {
+                submitButton.innerHTML = originalText;
+                submitButton.classList.remove('bg-green-600', 'hover:bg-green-700');
+            }, 3000);
+        });
+    }
+
+    // Scroll spy for navigation
+    function handleScrollSpy() {
+        const sections = document.querySelectorAll('section[id]');
+        const scrollPos = window.scrollY + 100;
+
+        sections.forEach(section => {
+            const sectionTop = section.offsetTop;
+            const sectionHeight = section.offsetHeight;
+            const sectionId = section.getAttribute('id');
+
+            if (scrollPos >= sectionTop && scrollPos < sectionTop + sectionHeight) {
+                updateActiveNavLink(`#${sectionId}`);
+            }
+        });
+    }
+
+    // Throttled scroll event
+    let scrollTimeout;
+    window.addEventListener('scroll', () => {
+        if (scrollTimeout) {
+            clearTimeout(scrollTimeout);
+        }
+        scrollTimeout = setTimeout(handleScrollSpy, 10);
+    });
+
+    // Initial scroll spy check
+    handleScrollSpy();
 
     // Placeholder for dynamic content - replace with actual data fetching
     const portfolioData = {

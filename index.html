@@ -9,41 +9,68 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <header class="bg-white dark:bg-gray-800 shadow-md fixed w-full z-50">
-        <nav class="container mx-auto px-4 py-4 flex justify-between items-center">
-            <a href="#hero" class="text-2xl font-bold text-gray-900 dark:text-white">Hassan Konneh</a>
-            <div class="flex items-center space-x-4">
-                <button id="theme-toggle" class="hidden md:block text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition duration-300 focus:outline-none">
-                    <i class="fas fa-moon text-xl"></i>
-                </button>
-                <div class="hidden md:flex space-x-6">
-                    <a href="#hero" class="text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition duration-300">Home</a>
-                    <a href="#about" class="text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition duration-300">About</a>
-                    <a href="#skills" class="text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition duration-300">Skills</a>
-                    <a href="#experience" class="text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition duration-300">Experience</a>
-                    <a href="#projects" class="text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition duration-300">Projects</a>
-                    <a href="#blog-insights" class="text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition duration-300">Blog & Insights</a>
-                    <a href="#testimonials" class="text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition duration-300">Testimonials</a>
-                    <a href="#contact" class="text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition duration-300">Contact</a>
-                    <a href="#services" class="text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition duration-300">Services</a>
-                </div>
-                <div class="md:hidden flex items-center space-x-4">
-                    <button id="theme-toggle-mobile" class="text-gray-900 dark:text-white focus:outline-none">
-                        <i class="fas fa-moon text-xl"></i>
-                    </button>
-                    <!-- Mobile menu button -->
-                    <button class="text-gray-900 dark:text-white focus:outline-none">
-                        <i class="fas fa-bars text-xl"></i>
-                    </button>
+    <!-- Left Sidebar Navigation -->
+    <nav id="sidebar" class="fixed left-0 top-0 h-full w-64 bg-white dark:bg-gray-800 shadow-lg z-50 transform -translate-x-full transition-transform duration-300 ease-in-out lg:translate-x-0">
+        <div class="flex flex-col h-full">
+            <!-- Profile Section -->
+            <div class="p-6 border-b border-gray-200 dark:border-gray-700">
+                <div class="flex items-center space-x-3">
+                    <img src="assets/Professional_photo.png" alt="Hassan Sidique Konneh" class="w-12 h-12 rounded-full object-cover">
+                    <div>
+                        <h2 class="text-lg font-semibold text-gray-900 dark:text-white">Hassan Konneh</h2>
+                        <p class="text-sm text-gray-600 dark:text-gray-400">Data Analyst & Economist</p>
+                    </div>
                 </div>
             </div>
-        </nav>
+
+            <!-- Theme Toggle -->
+            <div class="p-4 border-b border-gray-200 dark:border-gray-700">
+                <button id="theme-toggle" class="w-full flex items-center justify-center space-x-2 px-4 py-2 bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300 rounded-lg hover:bg-gray-200 dark:hover:bg-gray-600 transition duration-300 focus:outline-none focus:ring-2 focus:ring-blue-500">
+                    <i class="fas fa-moon text-lg"></i>
+                    <span>Dark Mode</span>
+                </button>
+            </div>
+
+            <!-- Navigation Links -->
+            <div class="flex-1 p-4">
+                <ul class="space-y-2">
+                    <li><a href="#hero" class="nav-link flex items-center space-x-3 px-4 py-3 text-gray-700 dark:text-gray-300 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700 transition duration-300"><i class="fas fa-home"></i><span>Home</span></a></li>
+                    <li><a href="#about" class="nav-link flex items-center space-x-3 px-4 py-3 text-gray-700 dark:text-gray-300 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700 transition duration-300"><i class="fas fa-user"></i><span>About</span></a></li>
+                    <li><a href="#skills" class="nav-link flex items-center space-x-3 px-4 py-3 text-gray-700 dark:text-gray-300 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700 transition duration-300"><i class="fas fa-code"></i><span>Skills</span></a></li>
+                    <li><a href="#experience" class="nav-link flex items-center space-x-3 px-4 py-3 text-gray-700 dark:text-gray-300 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700 transition duration-300"><i class="fas fa-briefcase"></i><span>Experience</span></a></li>
+                    <li><a href="#projects" class="nav-link flex items-center space-x-3 px-4 py-3 text-gray-700 dark:text-gray-300 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700 transition duration-300"><i class="fas fa-project-diagram"></i><span>Projects</span></a></li>
+                    <li><a href="#blog-insights" class="nav-link flex items-center space-x-3 px-4 py-3 text-gray-700 dark:text-gray-300 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700 transition duration-300"><i class="fas fa-blog"></i><span>Blog & Insights</span></a></li>
+                    <li><a href="#testimonials" class="nav-link flex items-center space-x-3 px-4 py-3 text-gray-700 dark:text-gray-300 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700 transition duration-300"><i class="fas fa-quote-left"></i><span>Testimonials</span></a></li>
+                    <li><a href="#contact" class="nav-link flex items-center space-x-3 px-4 py-3 text-gray-700 dark:text-gray-300 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700 transition duration-300"><i class="fas fa-envelope"></i><span>Contact</span></a></li>
+                    <li><a href="#services" class="nav-link flex items-center space-x-3 px-4 py-3 text-gray-700 dark:text-gray-300 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700 transition duration-300"><i class="fas fa-cogs"></i><span>Services</span></a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Mobile Header with Hamburger -->
+    <header class="lg:hidden fixed top-0 left-0 right-0 bg-white dark:bg-gray-800 shadow-md z-50">
+        <div class="flex justify-between items-center p-4">
+            <button id="hamburger-toggle" class="text-gray-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-blue-500 rounded-lg p-2">
+                <i class="fas fa-bars text-xl"></i>
+            </button>
+            <h1 class="text-xl font-bold text-gray-900 dark:text-white">Portfolio</h1>
+            <button id="theme-toggle-mobile" class="text-gray-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-blue-500 rounded-lg p-2">
+                <i class="fas fa-moon text-xl"></i>
+            </button>
+        </div>
     </header>
 
-    <main>
+    <!-- Overlay for mobile sidebar -->
+    <div id="sidebar-overlay" class="fixed inset-0 bg-black bg-opacity-50 z-40 hidden lg:hidden"></div>
+
+    <main class="lg:ml-64">
         <section id="hero" class="relative h-screen flex items-center justify-center text-center bg-gray-50 dark:bg-gray-900 py-16 px-4">
             <div class="max-w-4xl mx-auto z-10">
-                <img src="assets/Professional_photo.png" alt="Hassan Sidique Konneh Profile Picture" class="w-48 h-48 rounded-full mx-auto mb-6 shadow-lg object-cover">
+                <div class="relative inline-block">
+                    <div class="absolute inset-0 rounded-full bg-blue-500 animate-ping opacity-75"></div>
+                    <img src="assets/Professional_photo.png" alt="Hassan Sidique Konneh Profile Picture" class="relative w-64 h-64 rounded-full mx-auto mb-6 shadow-lg object-cover z-10">
+                </div>
                 <h1 id="hero-name" class="text-5xl md:text-7xl font-extrabold text-gray-900 dark:text-white leading-tight mb-4"></h1>
                 <p id="hero-title" class="text-2xl md:text-3xl text-blue-600 dark:text-blue-400 font-semibold mb-6"></p>
                 <p class="text-lg md:text-xl text-gray-700 dark:text-gray-300 mb-8">"Empowering data-driven decisions for a sustainable future."</p>
@@ -147,14 +174,59 @@
             </div>
         </section>
 
-        <section id="contact" class="py-16 px-4 bg-white dark:bg-gray-800 text-center">
-            <div class="max-w-4xl mx-auto">
-                <h2 class="text-4xl font-bold text-gray-900 dark:text-white mb-8">Contact</h2>
-                <div class="contact-info space-y-4 text-lg text-gray-700 dark:text-gray-300">
-                    <p>Email: <a id="contact-email" href="" class="text-blue-600 hover:underline"></a></p>
-                    <p>LinkedIn: <a id="contact-linkedin" href="" target="_blank" class="text-blue-600 hover:underline"></a></p>
-                    <p>GitHub: <a id="contact-github" href="https://github.com/hskonneh" target="_blank" class="text-blue-600 hover:underline">hskonneh</a></p>
-                    <p>Mobile: <span id="contact-mobile"></span></p>
+        <section id="contact" class="py-16 px-4 bg-white dark:bg-gray-800">
+            <div class="max-w-6xl mx-auto">
+                <h2 class="text-4xl font-bold text-gray-900 dark:text-white mb-8 text-center">Contact</h2>
+                <div class="grid md:grid-cols-2 gap-12">
+                    <!-- Contact Information -->
+                    <div class="space-y-6">
+                        <h3 class="text-2xl font-semibold text-gray-900 dark:text-white mb-6">Get In Touch</h3>
+                        <div class="contact-info space-y-4 text-lg text-gray-700 dark:text-gray-300">
+                            <div class="flex items-center space-x-3">
+                                <i class="fas fa-envelope text-blue-600 text-xl"></i>
+                                <span>Email: <a id="contact-email" href="" class="text-blue-600 hover:text-blue-800 dark:hover:text-blue-400 transition duration-300"></a></span>
+                            </div>
+                            <div class="flex items-center space-x-3">
+                                <i class="fab fa-linkedin text-blue-600 text-xl"></i>
+                                <span>LinkedIn: <a id="contact-linkedin" href="" target="_blank" class="text-blue-600 hover:text-blue-800 dark:hover:text-blue-400 transition duration-300"></a></span>
+                            </div>
+                            <div class="flex items-center space-x-3">
+                                <i class="fab fa-github text-blue-600 text-xl"></i>
+                                <span>GitHub: <a id="contact-github" href="https://github.com/hskonneh" target="_blank" class="text-blue-600 hover:text-blue-800 dark:hover:text-blue-400 transition duration-300">hskonneh</a></span>
+                            </div>
+                            <div class="flex items-center space-x-3">
+                                <i class="fas fa-phone text-blue-600 text-xl"></i>
+                                <span>Mobile: <span id="contact-mobile"></span></span>
+                            </div>
+                        </div>
+                        <div class="mt-8">
+                            <p class="text-gray-600 dark:text-gray-400 leading-relaxed">
+                                I'm always interested in new opportunities and collaborations. Whether you have a project in mind, want to discuss data analytics, or just want to connect, feel free to reach out!
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <!-- Contact Form -->
+                    <div class="bg-gray-50 dark:bg-gray-700 p-8 rounded-lg shadow-lg">
+                        <h3 class="text-2xl font-semibold text-gray-900 dark:text-white mb-6">Send a Message</h3>
+                        <form id="contact-form" class="space-y-6">
+                            <div>
+                                <label for="contact-name" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">Name</label>
+                                <input type="text" id="contact-name" name="name" required class="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent bg-white dark:bg-gray-800 text-gray-900 dark:text-white placeholder-gray-500 dark:placeholder-gray-400 transition duration-300" placeholder="Your full name">
+                            </div>
+                            <div>
+                                <label for="contact-email-form" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">Email</label>
+                                <input type="email" id="contact-email-form" name="email" required class="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent bg-white dark:bg-gray-800 text-gray-900 dark:text-white placeholder-gray-500 dark:placeholder-gray-400 transition duration-300" placeholder="your.email@example.com">
+                            </div>
+                            <div>
+                                <label for="contact-message" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">Message</label>
+                                <textarea id="contact-message" name="message" rows="5" required class="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent bg-white dark:bg-gray-800 text-gray-900 dark:text-white placeholder-gray-500 dark:placeholder-gray-400 transition duration-300 resize-none" placeholder="Tell me about your project or how I can help..."></textarea>
+                            </div>
+                            <button type="submit" class="w-full bg-blue-600 text-white py-3 px-6 rounded-lg font-semibold hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 dark:focus:ring-offset-gray-700 transition duration-300 transform hover:scale-105">
+                                <i class="fas fa-paper-plane mr-2"></i>Send Message
+                            </button>
+                        </form>
+                    </div>
                 </div>
             </div>
         </section>
